@@ -1,3 +1,4 @@
+#include "util.h"
 #include <assert.h>
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -6,6 +7,7 @@ __global__ void testKernel(int val) {
 
   val *= 20;
   printf("vall=%d\n", val);
+  test_u();
 }
 
 int main(int argc, char **argv) {
