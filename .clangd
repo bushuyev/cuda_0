@@ -1,3 +1,10 @@
 CompileFlags:
-    Add: [-std=c++20, -I/usr/include/c++/13, -I/usr/include/x86_64-linux-gnu/c++/13, -stdlib=libstdc++, --gcc-toolchain=/usr/lib/gcc/x86_64-linux-gnu/13/]
-    Remove: ["-rdc=true", "--options-file", "--generate-code", "--generate-code=arch=compute_89,code=[compute_89,sm_89]", "-forward-unknown-to-host-compiler"  ]
+    Add: [
+        -x cuda,
+        -std=c++20,
+        -nocudalib,
+        -I/usr/local/cuda/include,
+        -I/usr/include/c++/13,
+        -I/usr/include/x86_64-linux-gnu/c++/13
+    ]
+
