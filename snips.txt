@@ -2,3 +2,22 @@ cmake -B build -S . && cmake --build build && ./build/test0
 
     Add: [-std=c++20, -I/usr/include/c++/13, -I/usr/include/x86_64-linux-gnu/c++/13, -stdlib=libstdc++, --gcc-toolchain=/usr/lib/gcc/x86_64-linux-gnu/13/]
     Remove: ["-rdc=true", "--options-file", "--generate-code", "--generate-code=arch=compute_89,code=[compute_89,sm_89]", "-forward-unknown-to-host-compiler"  ]
+
+
+If:
+  PathMatch: ".*\\.(cu|cuh)$"
+
+CompileFlags:
+  Add:
+    - –cuda-path=/usr/local/cuda
+    - -x cuda
+
+
+
+
+If:
+  PathMatch: .*\.cu
+CompileFlags:
+  Add:
+    - –cuda-path=/usr/local/cuda
+    - -x cuda
